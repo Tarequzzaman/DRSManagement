@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+
+
+.table-view .column-header-background {
+    -fx-background-color: #008080; 
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff; /* Set your desired text color here */
+}

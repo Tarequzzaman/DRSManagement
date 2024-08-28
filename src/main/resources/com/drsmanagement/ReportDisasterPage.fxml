@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drsmanagement.ReportDisasterPageController">
+   <left>
+      <Pane prefHeight="600.0" prefWidth="320.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="38.0" layoutY="169.0" text="Please enter accurate information " textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="116.0" text="Change of Mind?" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="204.0" text="to access your report  Quickly" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="backbutton" layoutX="107.0" layoutY="265.0" mnemonicParsing="false" onAction="#BackButtonHandler" style="-fx-background-color: #ffffff;" text="Back">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane prefHeight="600.0" prefWidth="640.0" style="-fx-font-family: Arial;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="titleDisaster" layoutX="187.0" layoutY="172.0" prefHeight="38.0" prefWidth="337.0" promptText="Title">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="contractNumber" layoutX="187.0" layoutY="387.0" prefHeight="37.0" prefWidth="337.0" promptText="Contract Number">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <TextArea fx:id="disasterDescription" layoutX="186.0" layoutY="271.0" prefHeight="109.0" prefWidth="340.0" promptText="Disaster Description">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextArea>
+            <ComboBox fx:id="disasterType" layoutX="187.0" layoutY="221.0" prefHeight="37.0" prefWidth="337.0" promptText="Disaster Type" />
+            <TextField fx:id="street" layoutX="188.0" layoutY="435.0" prefHeight="37.0" prefWidth="156.0" promptText="Street">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="houseNo" layoutX="357.0" layoutY="435.0" prefHeight="37.0" prefWidth="167.0" promptText="House No">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="suburb" layoutX="186.0" layoutY="482.0" prefHeight="37.0" prefWidth="162.0" promptText="Suburb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="unit" layoutX="356.0" layoutY="482.0" prefHeight="37.0" prefWidth="169.0" promptText="Unit No">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="state" layoutX="188.0" layoutY="528.0" prefHeight="37.0" prefWidth="338.0" promptText="State" />
+            <Button fx:id="submit" layoutX="296.0" layoutY="598.0" mnemonicParsing="false" onAction="#submitButtonHandler" style="-fx-background-color: #008080;" text="Submit Report" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="userName" layoutX="414.0" layoutY="34.0" text="Tarequzzaman Khan">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="logout" layoutX="606.0" layoutY="28.0" mnemonicParsing="false" onAction="#LogoutHandler" style="-fx-background-color: #008080;" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="188.0" layoutY="125.0" text="Disaster Report">
+               <font>
+                  <Font name="Arial" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
