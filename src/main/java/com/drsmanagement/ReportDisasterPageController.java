@@ -4,6 +4,7 @@
  */
 package com.drsmanagement;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -65,18 +66,28 @@ public class ReportDisasterPageController implements Initializable {
     }
 
     @FXML
-    private void BackButtonHandler(ActionEvent event) {
+    private void BackButtonHandler(ActionEvent event) throws IOException {
         
-        
-        
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("UserDashboard.fxml");
+        misc.setSceneName("Dashboard");
+        misc.openCloseScene(event);
     }
 
     @FXML
-    private void submitButtonHandler(ActionEvent event) {
+    private void submitButtonHandler(ActionEvent event) throws IOException {
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("UserDashboard.fxml");
+        misc.setSceneName("Dashboard");
+        misc.openCloseScene(event);
     }
 
     @FXML
-    private void LogoutHandler(ActionEvent event) {
+    private void LogoutHandler(ActionEvent event) throws IOException {
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("LogInPage.fxml");
+        misc.setSceneName("Log In");
+        misc.openCloseScene(event);
     }
 
 }

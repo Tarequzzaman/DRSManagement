@@ -1,6 +1,7 @@
 module-info.class
 com/drsmanagement/SignUpPageController.class
 com/drsmanagement/ReportDisasterPageController.class
+com/drsmanagement/MiscSceneCloseAndOpen.class
 com/drsmanagement/App.class
 com/drsmanagement/LogInPageController.class
 com/drsmanagement/UserDashboardController.class

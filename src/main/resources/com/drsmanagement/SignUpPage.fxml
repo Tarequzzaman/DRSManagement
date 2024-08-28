@@ -69,7 +69,7 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </PasswordField>
-            <Button layoutX="325.0" layoutY="499.0" mnemonicParsing="false" style="-fx-background-color: #009999;" text="Submit" textFill="WHITE">
+            <Button fx:id="submit" layoutX="325.0" layoutY="499.0" mnemonicParsing="false" onAction="#SubmitHandler" style="-fx-background-color: #009999;" text="Submit" textFill="WHITE">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>

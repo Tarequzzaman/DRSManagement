@@ -26,6 +26,8 @@ public class SignUpPageController implements Initializable {
 
     @FXML
     private Button signIn;
+    @FXML
+    private Button submit;
 
     /**
      * Initializes the controller class.
@@ -33,30 +35,27 @@ public class SignUpPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void SignInHandler(ActionEvent event) throws IOException {
-                // Load the SignUpPage FXML
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LogInPage.fxml"));
-        Parent signInRoot = fxmlLoader.load();
+        // Load the SignUpPage FXML
 
-        // Create a new scene with the SignUpPage
-        Scene signUpScene = new Scene(signInRoot,1060, 700);
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("LogInPage.fxml");
+        misc.setSceneName("Log In");
+        misc.openCloseScene(event);
 
-        // Create a new stage
-        Stage signUpStage = new Stage();
-        signUpStage.setScene(signUpScene);
-        signUpStage.setTitle("Sign Up");
-
-        // Show the new stage
-        signUpStage.show();
-
-        // Close the current stage (Login stage)
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        currentStage.close();
-        
-        
     }
-    
+
+    @FXML
+    private void SubmitHandler(ActionEvent event) throws IOException {
+
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("UserDashboard.fxml");
+        misc.setSceneName("Dashboard");
+        misc.openCloseScene(event);
+
+    }
+
 }
