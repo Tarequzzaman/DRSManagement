@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.drsmanagement;
+package Model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -13,7 +13,7 @@ import javafx.scene.control.ComboBox;
  *
  * @author tarequzzamankhan
  */
-public class EmergencyResponderHalperController {
+public class EmergencyTableView {
     
     private SimpleIntegerProperty disasterId;
     private SimpleStringProperty disasterTitle;
@@ -23,7 +23,7 @@ public class EmergencyResponderHalperController {
     private Button action;
 
 
-    public EmergencyResponderHalperController(int disasterId, String disasterTitle, String priority,  String[] groups, String selectedGroup) {
+    public EmergencyTableView(int disasterId, String disasterTitle, String priority,  String[] groups, String selectedGroup) {
         this.disasterId = new SimpleIntegerProperty(disasterId);
         this.disasterTitle = new SimpleStringProperty(disasterTitle);
         this.details = new Button("View Details");

@@ -4,6 +4,7 @@
  */
 package com.drsmanagement;
 
+import Model.EmergencyTableView;
 import Model.DisasterDetails;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -37,25 +38,25 @@ public class ResponderDashboardController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private TableView<EmergencyResponderHalperController> tableView;
+    private TableView<EmergencyTableView> tableView;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, Integer> disesterId;
+    private TableColumn<EmergencyTableView, Integer> disesterId;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, String> disasterTitle;
+    private TableColumn<EmergencyTableView, String> disasterTitle;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, Button> details;
+    private TableColumn<EmergencyTableView, Button> details;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, String> priority;
+    private TableColumn<EmergencyTableView, String> priority;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, ComboBox<String>> status;
+    private TableColumn<EmergencyTableView, ComboBox<String>> status;
 
     @FXML
-    private TableColumn<EmergencyResponderHalperController, Button> action;
+    private TableColumn<EmergencyTableView, Button> action;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,7 +66,7 @@ public class ResponderDashboardController implements Initializable {
 
         details.setCellFactory(new Callback<>() {
             @Override
-            public TableCell<EmergencyResponderHalperController, Button> call(TableColumn<EmergencyResponderHalperController, Button> param) {
+            public TableCell<EmergencyTableView, Button> call(TableColumn<EmergencyTableView, Button> param) {
                 return new TableCell<>() {
                     private final Button viewButton = new Button("View Details");
 
@@ -75,7 +76,7 @@ public class ResponderDashboardController implements Initializable {
                         if (empty) {
                             setGraphic(null);
                         } else {
-                            EmergencyResponderHalperController EmergencyResponderHalperController = getTableView().getItems().get(getIndex());
+                            EmergencyTableView EmergencyResponderHalperController = getTableView().getItems().get(getIndex());
                             viewButton.setOnAction(event -> {
                                 // Handle button click here
                                 System.out.println("View Details button clicked for ID: " + EmergencyResponderHalperController.getDisasterId());
@@ -125,10 +126,10 @@ public class ResponderDashboardController implements Initializable {
 
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        status.setCellFactory(new Callback<TableColumn<EmergencyResponderHalperController, ComboBox<String>>, TableCell<EmergencyResponderHalperController, ComboBox<String>>>() {
+        status.setCellFactory(new Callback<TableColumn<EmergencyTableView, ComboBox<String>>, TableCell<EmergencyTableView, ComboBox<String>>>() {
             @Override
-            public TableCell<EmergencyResponderHalperController, ComboBox<String>> call(TableColumn<EmergencyResponderHalperController, ComboBox<String>> param) {
-                return new TableCell<EmergencyResponderHalperController, ComboBox<String>>() {
+            public TableCell<EmergencyTableView, ComboBox<String>> call(TableColumn<EmergencyTableView, ComboBox<String>> param) {
+                return new TableCell<EmergencyTableView, ComboBox<String>>() {
                     @Override
                     protected void updateItem(ComboBox<String> item, boolean empty) {
                         super.updateItem(item, empty);
@@ -144,7 +145,7 @@ public class ResponderDashboardController implements Initializable {
 
         action.setCellFactory(new Callback<>() {
             @Override
-            public TableCell<EmergencyResponderHalperController, Button> call(TableColumn<EmergencyResponderHalperController, Button> param) {
+            public TableCell<EmergencyTableView, Button> call(TableColumn<EmergencyTableView, Button> param) {
                 return new TableCell<>() {
                     private final Button ActionButton = new Button("Send");
 
@@ -154,7 +155,7 @@ public class ResponderDashboardController implements Initializable {
                         if (empty) {
                             setGraphic(null);
                         } else {
-                            EmergencyResponderHalperController EmergencyResponderHalperController = getTableView().getItems().get(getIndex());
+                            EmergencyTableView EmergencyResponderHalperController = getTableView().getItems().get(getIndex());
                             ActionButton.setOnAction(event -> {
                                 // Handle button click here
                                 System.out.println("View Details button clicked for ID: " + EmergencyResponderHalperController.getDisasterId());
@@ -170,9 +171,8 @@ public class ResponderDashboardController implements Initializable {
         // (int disasterId, String disasterTitle, String priority,  String[] groups, String selectedGroup)
         String[] disesterStatus = {"pending", "Ongoing", "Complete"};
 
-        ObservableList<EmergencyResponderHalperController> data = FXCollections.observableArrayList(
-                new EmergencyResponderHalperController(1, "Flood in Area A", "High", disesterStatus, "High"),
-                new EmergencyResponderHalperController(2, "Fire in Area B", "Low", disesterStatus, "High")
+        ObservableList<EmergencyTableView> data = FXCollections.observableArrayList(new EmergencyTableView(1, "Flood in Area A", "High", disesterStatus, "High"),
+                new EmergencyTableView(2, "Fire in Area B", "Low", disesterStatus, "High")
         );
 
         tableView.setItems(data);
