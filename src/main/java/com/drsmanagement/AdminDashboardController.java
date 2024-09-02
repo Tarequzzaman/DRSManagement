@@ -101,6 +101,7 @@ public class AdminDashboardController implements Initializable {
 
         tableView.setItems(data);
     }
+    
 
     private void setupAssessedTab() {
         disesterId1.setCellValueFactory(new PropertyValueFactory<>("disasterId"));
@@ -113,6 +114,7 @@ public class AdminDashboardController implements Initializable {
         loadAssessedTableData();
     }
 
+    
     private void loadAssessedTableData() {
         ObservableList<DisesterTableView> data = FXCollections.observableArrayList(
                 new DisesterTableView(3, "Flood in Area C", "Flash Flood", "Medium"),
@@ -127,10 +129,12 @@ public class AdminDashboardController implements Initializable {
         tableView1.setItems(data);
     }
 
+    
     private void reloadTableData() {
         tableView.getItems().clear();
         loadPendingTableData();
     }
+    
 
     private void openDetailsWindow(DisesterTableView item) {
         DisasterDetails disasterDetails = new DisasterDetails(
@@ -143,6 +147,7 @@ public class AdminDashboardController implements Initializable {
                 "Area A",
                 "NSW"
         );
+        
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("DisasterDetails.fxml"));

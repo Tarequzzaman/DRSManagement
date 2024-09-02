@@ -44,27 +44,27 @@
                   <Font name="Arial" size="32.0" />
                </font>
             </Label>
-            <TextField layoutX="201.0" layoutY="188.0" prefHeight="38.0" prefWidth="337.0" promptText="First Name">
+            <TextField fx:id="firstName" layoutX="201.0" layoutY="188.0" prefHeight="38.0" prefWidth="337.0" promptText="First Name">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </TextField>
-            <TextField layoutX="201.0" layoutY="247.0" prefHeight="38.0" prefWidth="337.0" promptText="Last Name">
+            <TextField fx:id="lastName" layoutX="201.0" layoutY="247.0" prefHeight="38.0" prefWidth="337.0" promptText="Last Name">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </TextField>
-            <TextField layoutX="201.0" layoutY="306.0" prefHeight="38.0" prefWidth="337.0" promptText="Phone Number">
+            <TextField fx:id="phoneNumber" layoutX="201.0" layoutY="306.0" prefHeight="38.0" prefWidth="337.0" promptText="Phone Number">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </TextField>
-            <TextField layoutX="201.0" layoutY="366.0" prefHeight="38.0" prefWidth="337.0" promptText="Email">
+            <TextField fx:id="email" layoutX="201.0" layoutY="366.0" prefHeight="38.0" prefWidth="337.0" promptText="Email">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </TextField>
-            <PasswordField layoutX="201.0" layoutY="425.0" prefHeight="38.0" prefWidth="337.0" promptText="Password">
+            <PasswordField fx:id="password" layoutX="201.0" layoutY="425.0" prefHeight="38.0" prefWidth="337.0" promptText="Password">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
