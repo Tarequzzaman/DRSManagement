@@ -45,16 +45,6 @@
                                 <Font name="Arial" size="16.0" />
                             </font>
                         </Button>
-                        <Button fx:id="userManagement" layoutY="-1.0" mnemonicParsing="false" onAction="#UserManagementHandler" prefHeight="77.0" prefWidth="184.0" text="User Management">
-                            <font>
-                                <Font name="Arial" size="16.0" />
-                            </font>
-                        </Button>
-                  <Button fx:id="accessedReort" layoutX="184.0" layoutY="-1.0" mnemonicParsing="false" onAction="#AccessedReortHandler" prefHeight="77.0" prefWidth="197.0" text="Assesed Report">
-                     <font>
-                        <Font name="Arial" size="16.0" />
-                     </font>
-                  </Button>
                     </children>
                 </Pane>
                 <TableView id="tableView" fx:id="tableView" layoutX="1.0" layoutY="180.0" prefHeight="429.0" prefWidth="740.0" style="-fx-background-color: #ffffff;">
