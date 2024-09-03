@@ -1,6 +1,7 @@
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/module-info.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/App.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/utils/AlertUtil.java
+/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/Model/SessionManager.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/UserDashboardController.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/Model/EmergencyTableView.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/DisasterDetailsController.java
@@ -14,6 +15,9 @@
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/constant/AdminViewConstants.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/Model/DisasterDetails.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/ResponderDashboardController.java
-/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/LogInPageController.java
+/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/LoginPageController.java
+/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/constant/ReportDisaster.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/MiscSceneCloseAndOpen.java
 /Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/com/drsmanagement/ReportDisasterPageController.java
+/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/database/DisasterService.java
+/Users/tarequzzamankhan/OneDrive - CQUniversity/Semester3/COIT20258/DRSManagement/src/main/java/database/FileService.java

@@ -1,0 +1,13 @@
+disasterId,disasterTitle,detail,phone,unit,houseNumber,suburb,state,submittedBy,status,priority,designatedDepartment
+1,Wildfire in Forest Reserve,Large wildfire spreading rapidly due to dry conditions and strong winds,04723892382,Unit 1,123,Forest Hill,NSW,2,dispatched,Medium,Fire Department
+2,Urban Flooding in Metro City,Intense rainfall has overwhelmed the drainage system causing widespread urban flooding,04723892383,Unit 2,124,Metro City,VIC,2,dispatched,Medium,Flood Department
+3,Pandemic Outbreak,A new strain of flu spreading rapidly,04723892384,Unit 3,125,CBD,SYD,2,dispatched,High,Fire Department
+4,Drought in Western Plains,Extended drought causing severe water shortages and agricultural damage,04723892385,Unit 4,126,Western Plains,QLD,2,dispatched,Medium,Desert Department
+5,Bushfire in Northern Hills,Bushfire threatening residential areas after spreading from nearby forests,04723892386,Unit 5,127,Northern Hills,WA,2,dispatched,Low,Fire Department
+6,Factory Fire in Industrial Zone,"Fire broke out in a chemical factory, threatening nearby buildings",04723892387,Unit 6,128,Industrial Zone,NSW,2,Pending,Low,
+7,Apartment Building Fire,"Fire in a multi-story apartment building, people trapped inside",04723892388,Unit 7,129,Downtown,NSW,2,Pending,Low,
+8,Bushfire near Riverside,Fire spreading close to residential areas near Riverside,04723892389,Unit 8,130,Riverside,NSW,2,dispatched,Low,Desert Department
+9,Forest Fire in Mountain Range,Forest fire spreading in remote mountainous area,04723892390,Unit 9,131,Mountain Range,NSW,2,Pending,Low,
+10,Small Fire in Shopping Complex,"Small fire broke out in a shop, contained but needs monitoring",04723892391,Unit 10,132,Central Plaza,VIC,2,Pending,Low,
+11,Flood,sss,3434355535,,,,NSW,3,dispatched,Low,Flood Department
+12,Fire catched on my building,Hi there need assistence ,017372,13,254,Lakemba,NSW,2,Pending,High,Fire

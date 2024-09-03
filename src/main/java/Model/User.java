@@ -1,7 +1,9 @@
 package Model;
+
 import enam.UserRole;
 
 public class User {
+
     private String id;
     private String firstName;
     private String lastName;
@@ -18,6 +20,15 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
+        this.role = (role != null) ? role : UserRole.USER; // Set default role to USER if role is null
+    }
+
+    public User(String id, String firstName, String lastName, String phoneNumber, String email, UserRole role) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.role = (role != null) ? role : UserRole.USER; // Set default role to USER if role is null
     }
 
@@ -54,6 +65,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+
     public String getEmail() {
         return email;
     }
@@ -76,5 +88,10 @@ public class User {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+    
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", email=" + email + ", password=" + password + ", role=" + role + '}';
     }
 }

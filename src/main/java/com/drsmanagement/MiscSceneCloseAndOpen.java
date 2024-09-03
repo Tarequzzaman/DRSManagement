@@ -62,5 +62,30 @@ public class MiscSceneCloseAndOpen {
         currentStage.close();
 
     }
+    
+    
+    
+    
+    public void openScene(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(this.getSceneFileName()));
+        Parent root = fxmlLoader.load();
+
+        // Create a new scene
+        Scene scene = new Scene(root, 1060, 700);
+
+        // Get the current stage from the event source
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Set the new scene on the existing stage
+        stage.setScene(scene);
+        stage.setTitle(this.getSceneName());
+        stage.show();
+    }
+
+    public void closeCurrentStage(ActionEvent event) {
+        // Get the current stage from the event source
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 
 }

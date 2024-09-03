@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="964.0" style="-fx-background-color: #FFFFF;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drsmanagement.LogInPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="964.0" style="-fx-background-color: #FFFFF;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drsmanagement.LoginPageController">
    <left>
       <AnchorPane prefHeight="652.0" prefWidth="322.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
          <children>
@@ -33,12 +33,12 @@
    <center>
       <AnchorPane prefHeight="652.0" prefWidth="676.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="169.0" layoutY="212.0" prefHeight="38.0" prefWidth="337.0" promptText="Email">
+            <TextField fx:id="emailField" layoutX="169.0" layoutY="212.0" prefHeight="38.0" prefWidth="337.0" promptText="Email">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </TextField>
-            <PasswordField layoutX="171.0" layoutY="274.0" prefHeight="39.0" prefWidth="336.0" promptText="Password">
+            <PasswordField fx:id="passwordField" layoutX="171.0" layoutY="274.0" prefHeight="39.0" prefWidth="336.0" promptText="Password">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>

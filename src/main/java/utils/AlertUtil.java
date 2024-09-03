@@ -19,6 +19,8 @@ public class AlertUtil {
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
+        alert.getDialogPane().setStyle("-fx-font-family: 'Arial';");
+
         alert.showAndWait();
     }
 }

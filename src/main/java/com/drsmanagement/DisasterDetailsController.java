@@ -4,6 +4,8 @@
  */
 package com.drsmanagement;
 
+import Model.SessionManager;
+import Model.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -35,29 +37,34 @@ public class DisasterDetailsController implements Initializable {
     private Text state;
     @FXML
     private Button okayButton;
+    @FXML
+    private Label status;
+    @FXML
+    private Label reporterName;
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
-    
-     // Method to set the details in the UI
-    public void setDetails(String titleText, String detailText, String phoneText, String locationText, String stateText) {
+
+    // Method to set the details in the UI
+    public void setDetails(String titleText, String detailText, String phoneText, String locationText, String stateText, String statusText, String reporterNameText) {
         title.setText(titleText);
         detail.setText(detailText);
         phone.setText(phoneText);
         location.setText(locationText);
         state.setText(stateText);
+        status.setText(statusText);
+        reporterName.setText(reporterNameText);
     }
 
     @FXML
     private void okayButtonHandler(ActionEvent event) {
-
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         currentStage.close();
     }
-
 }

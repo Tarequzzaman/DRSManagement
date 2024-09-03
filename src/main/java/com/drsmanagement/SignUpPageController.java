@@ -54,7 +54,12 @@ public class SignUpPageController implements Initializable {
     }
 
     @FXML
-    private void SignInHandler(ActionEvent event) {
+    private void SignInHandler(ActionEvent event) throws IOException {
+                 MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+                misc.setSceneFileName("LogInPage.fxml");
+                misc.setSceneName("Log In");
+                misc.openCloseScene(event);
+        
     }
 
     @FXML
@@ -73,7 +78,7 @@ public class SignUpPageController implements Initializable {
                 || mail == null || mail.trim().isEmpty()
                 || pass == null || pass.trim().isEmpty()) {
 
-            AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Input", "Please fill in all the required fields.");
+            AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Input", "Please fill in all the fields.");
             return; // Exit the method if validation fails
         }
 
@@ -91,7 +96,7 @@ public class SignUpPageController implements Initializable {
         String newUserId = userService.generateNextId();
 
         // Hash the password
-        String hashedPassword = hashPassword(pass);
+        String hashedPassword = userService.hashPassword(pass);
 
         // Create a new User object
         User newUser = new User(newUserId, fName, lName, number, mail, hashedPassword, UserRole.USER);
@@ -117,19 +122,6 @@ public class SignUpPageController implements Initializable {
         }
     }
 
-    private String hashPassword(String password) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hash = md.digest(password.getBytes());
-            StringBuilder sb = new StringBuilder();
-            for (byte b : hash) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+    
 
 }

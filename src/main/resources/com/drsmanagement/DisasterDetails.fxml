@@ -9,59 +9,74 @@
 
 <AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drsmanagement.DisasterDetailsController">
    <children>
-      <Label layoutX="188.0" layoutY="68.0" text="Disaster Details">
+      <Label layoutX="188.0" layoutY="48.0" text="Disaster Details">
          <font>
             <Font name="Arial" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="151.0" text="Title">
+      <Label layoutX="50.0" layoutY="102.0" text="Title">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="title" layoutX="157.0" layoutY="151.0" prefHeight="20.0" prefWidth="367.0" text="asfsadjkfasdjhvbsdfjbvjsnbfavasbfbvsdfbvs">
+      <Label fx:id="title" layoutX="153.0" layoutY="102.0" prefHeight="20.0" prefWidth="367.0" text="asfsadjkfasdjhvbsdfjbvjsnbfavasbfbvsdfbvs">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="192.0" text="Details">
+      <Label layoutX="50.0" layoutY="143.0" text="Details">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <TextArea fx:id="detail" layoutX="157.0" layoutY="192.0" prefHeight="121.0" prefWidth="385.0">
+      <TextArea fx:id="detail" layoutX="153.0" layoutY="143.0" prefHeight="121.0" prefWidth="385.0">
          <font>
             <Font name="Arial" size="16.0" />
          </font></TextArea>
-      <Label layoutX="79.0" layoutY="342.0" text="Contract">
+      <Label layoutX="50.0" layoutY="293.0" text="Contract">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="phone" layoutX="158.0" layoutY="342.0" text="04723892382">
+      <Label fx:id="phone" layoutX="154.0" layoutY="293.0" text="04723892382">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="384.0" text="Location">
+      <Label layoutX="50.0" layoutY="414.0" text="Status">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Text fx:id="location" layoutX="164.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fsafnksfnksadjnfjsdabhsadfjsadjk" wrappingWidth="304.21630859375">
+      <Text fx:id="location" layoutX="160.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fsafnksfnksadjnfjsdabhsadfjsadjk" wrappingWidth="304.21630859375">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="state" layoutX="164.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State : NSW" wrappingWidth="304.21630859375">
+      <Text fx:id="state" layoutX="160.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State : NSW" wrappingWidth="304.21630859375">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Text>
-      <Button fx:id="okayButton" layoutX="262.0" layoutY="483.0" mnemonicParsing="false" onAction="#okayButtonHandler" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #008080;" text="Ok" textFill="#fffefe">
+      <Button fx:id="okayButton" layoutX="262.0" layoutY="534.0" mnemonicParsing="false" onAction="#okayButtonHandler" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #008080;" text="Ok" textFill="#fffefe">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Button>
+      <Label fx:id="status" layoutX="160.0" layoutY="414.0" text="Pending">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="455.0" text="Created by">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="reporterName" layoutX="160.0" layoutY="455.0" text="User Name">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

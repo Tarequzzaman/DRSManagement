@@ -28,7 +28,7 @@
    <right>
       <Pane prefHeight="700.0" prefWidth="750.0" style="-fx-background-color: #ffffff; -fx-font-family: Arial;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="388.0" layoutY="47.0" text="Tarequzzaman Khan">
+            <Label fx:id="userName" layoutX="388.0" layoutY="47.0" text="Tarequzzaman Khan">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>

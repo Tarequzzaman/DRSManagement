@@ -6,6 +6,8 @@ package com.drsmanagement;
 
 import Model.EmergencyTableView;
 import Model.DisasterDetails;
+import Model.SessionManager;
+import Model.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -17,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -57,9 +60,20 @@ public class ResponderDashboardController implements Initializable {
 
     @FXML
     private TableColumn<EmergencyTableView, Button> action;
+    
+     @FXML
+    private Label userName;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        if (SessionManager.isLoggedIn()) {
+            User currentUser = SessionManager.getCurrentUser();
+            userName.setText("Welcome, " + currentUser.getFirstName());
+        } else {
+            // Handle case where no user is signed in (optional)
+            userName.setText("Please sign in.");
+        }
 
         disesterId.setCellValueFactory(new PropertyValueFactory<>("disasterId"));
         disasterTitle.setCellValueFactory(new PropertyValueFactory<>("disasterTitle"));
@@ -82,7 +96,8 @@ public class ResponderDashboardController implements Initializable {
                                 System.out.println("View Details button clicked for ID: " + EmergencyResponderHalperController.getDisasterId());
 
                                 /// dummy data this data need to comes from database via model
-                                DisasterDetails disester = new DisasterDetails(1, "Flood in Area A", "Heavy rain caused flooding", "04723892382", "Unit 1", "123", "Area A", "NSW");
+
+                                DisasterDetails disester = new DisasterDetails(1, "Flood in Area A", "Heavy rain caused flooding", "04723892382", "Unit 1", "123", "Area A", "NSW", "0", "pending", "N/A", "Flood");
 
                                 openDetailsWindow(disester);
 
@@ -97,11 +112,11 @@ public class ResponderDashboardController implements Initializable {
                             Parent root = loader.load();
 
                             DisasterDetailsController controller = loader.getController();
-                            controller.setDetails(disasterDetails.getDisasterTitle(),
-                                    disasterDetails.getDetail(),
-                                    disasterDetails.getPhone(),
-                                    disasterDetails.getLocation(),
-                                    disasterDetails.getState());
+//                            controller.setDetails(disasterDetails.getDisasterTitle(),
+//                                    disasterDetails.getDetail(),
+//                                    disasterDetails.getPhone(),
+//                                    disasterDetails.getLocation(),
+//                                    disasterDetails.getState());
 
                             // Create a new scene with the SignUpPage
                             Scene signUpScene = new Scene(root);
