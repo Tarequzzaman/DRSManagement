@@ -14,6 +14,7 @@ public class DisesterTableView {
     private final Button action;
     private String selectedGroup;
     private String selectedPriority;
+    
 
    
     // Constructor for "Pending" tab with ComboBoxes and buttons

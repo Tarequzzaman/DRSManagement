@@ -10,12 +10,16 @@ package database;
  */
 import Model.DisasterDetails;
 import constant.ReportDisaster;
+import constant.Responder;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -219,51 +223,168 @@ public class DisasterService {
         return null;  // Return null if no matching disaster is found
     }
 
-public List<DisasterDetails> getAssessedDisasters() {
-    List<DisasterDetails> assessedDisasters = new ArrayList<>();
+    public List<DisasterDetails> getAssessedDisasters() {
+        List<DisasterDetails> assessedDisasters = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(ReportDisaster.CSV_FILE))) {
+            String line;
+            boolean isFirstLine = true;
+
+            while ((line = reader.readLine()) != null) {
+                // Skip the header line
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+
+                String[] fields = line.split(",", -1);
+
+                try {
+                    int disasterId = Integer.parseInt(fields[0]);
+                    if (!fields[9].equalsIgnoreCase("pending")) {
+                        DisasterDetails disaster = new DisasterDetails(
+                                disasterId, // disasterId
+                                fields[1], // disasterTitle
+                                fields[2], // detail
+                                fields[3], // phone
+                                fields[4], // unit
+                                fields[5], // houseNumber
+                                fields[6], // suburb
+                                fields[7], // state
+                                fields[8], // submittedBy
+                                fields[9], // status
+                                fields[10], // priority
+                                fields[11] // designatedDepartment
+                        );
+                        assessedDisasters.add(disaster);
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Skipping invalid disasterId: " + fields[0]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return assessedDisasters;
+    }
+
+   
+
+    public List<DisasterDetails> getDisastersByStatusAndRole(String status, String userRole) {
+                       
+
+        List<DisasterDetails> disasters = new ArrayList<>();
+
+        String department = Responder.getDepartmentByRole(userRole);
+        try (BufferedReader reader = new BufferedReader(new FileReader(ReportDisaster.CSV_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",", -1);  // -1 ensures it keeps empty fields
+
+                // Check if the status matches and the designated department (role) matches
+                if (fields.length == 12 && status.equalsIgnoreCase(fields[9]) && department.equalsIgnoreCase(fields[11])) {
+                    DisasterDetails disaster = new DisasterDetails(
+                            Integer.parseInt(fields[0]), // disasterId
+                            fields[1], // disasterTitle
+                            fields[2], // detail
+                            fields[3], // phone
+                            fields[4], // unit
+                            fields[5], // houseNumber
+                            fields[6], // suburb
+                            fields[7], // state
+                            fields[8], // submittedBy
+                            fields[9], // status
+                            fields[10], // priority
+                            fields[11] // designatedDepartment
+                    );
+                    disasters.add(disaster);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return disasters;
+    }
+    
+public void updateDisasterStatus(int disasterId, String newStatus) {
+    List<DisasterDetails> allDisasters = new ArrayList<>();
+
+    // Create a backup of the original file before updating
+    try {
+        Files.copy(Paths.get(ReportDisaster.CSV_FILE), Paths.get(ReportDisaster.CSV_FILE + ".bak"), StandardCopyOption.REPLACE_EXISTING);
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.err.println("Failed to create backup. Aborting update to prevent data loss.");
+        return;
+    }
 
     try (BufferedReader reader = new BufferedReader(new FileReader(ReportDisaster.CSV_FILE))) {
         String line;
-        boolean isFirstLine = true;
-
+        boolean skipHeader = true;
         while ((line = reader.readLine()) != null) {
-            // Skip the header line
-            if (isFirstLine) {
-                isFirstLine = false;
+            if (skipHeader) {
+                skipHeader = false;
                 continue;
             }
-
             String[] fields = line.split(",", -1);
-
-            try {
-                int disasterId = Integer.parseInt(fields[0]);
-                if (!fields[9].equalsIgnoreCase("pending")) {
+            if (fields.length == 12) {
+                try {
+                    int id = Integer.parseInt(fields[0]);
                     DisasterDetails disaster = new DisasterDetails(
-                            disasterId,                 // disasterId
-                            fields[1],                  // disasterTitle
-                            fields[2],                  // detail
-                            fields[3],                  // phone
-                            fields[4],                  // unit
-                            fields[5],                  // houseNumber
-                            fields[6],                  // suburb
-                            fields[7],                  // state
-                            fields[8],                  // submittedBy
-                            fields[9],                  // status
-                            fields[10],                 // priority
-                            fields[11]                  // designatedDepartment
+                            id, // disasterId
+                            fields[1], // disasterTitle
+                            fields[2], // detail
+                            fields[3], // phone
+                            fields[4], // unit
+                            fields[5], // houseNumber
+                            fields[6], // suburb
+                            fields[7], // state
+                            fields[8], // submittedBy
+                            fields[9], // status
+                            fields[10], // priority
+                            fields[11]  // designatedDepartment
                     );
-                    assessedDisasters.add(disaster);
+                    if (id == disasterId) {
+                        disaster.setStatus(newStatus); // Update status
+                    }
+                    allDisasters.add(disaster);
+                } catch (NumberFormatException e) {
+                    System.err.println("Skipping invalid line: " + line);
                 }
-            } catch (NumberFormatException e) {
-                System.err.println("Skipping invalid disasterId: " + fields[0]);
+            } else {
+                System.err.println("Skipping line with incorrect format: " + line);
             }
         }
     } catch (IOException e) {
         e.printStackTrace();
     }
 
-    return assessedDisasters;
+    // Write the updated list back to the CSV file
+    try (PrintWriter writer = new PrintWriter(new FileWriter(ReportDisaster.CSV_FILE, false))) {
+        writer.println("disasterId,disasterTitle,detail,phone,unit,houseNumber,suburb,state,submittedBy,status,priority,designatedDepartment");
+        for (DisasterDetails disaster : allDisasters) {
+            writer.println(disaster.getDisasterId() + "," + disaster.getDisasterTitle() + "," + disaster.getDetail() + ","
+                    + disaster.getPhone() + "," + disaster.getUnit() + "," + disaster.getHouseNumber() + ","
+                    + disaster.getSuburb() + "," + disaster.getState() + "," + disaster.getSubmittedBy() + ","
+                    + disaster.getStatus() + "," + disaster.getPriority() + "," + disaster.getDesignatedDepartment());
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.err.println("Failed to update CSV file. Restoring from backup.");
+        restoreBackup();
+    }
 }
 
+private void restoreBackup() {
+    try {
+        Files.copy(Paths.get(ReportDisaster.CSV_FILE + ".bak"), Paths.get(ReportDisaster.CSV_FILE), StandardCopyOption.REPLACE_EXISTING);
+        System.out.println("Data restored from backup.");
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.err.println("Failed to restore data from backup.");
+    }
+}
 
 }

@@ -2,8 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -25,7 +28,7 @@
          </children>
       </Pane>
    </left>
-   <right>
+   <center>
       <Pane prefHeight="700.0" prefWidth="750.0" style="-fx-background-color: #ffffff; -fx-font-family: Arial;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="userName" layoutX="388.0" layoutY="47.0" text="Tarequzzaman Khan">
@@ -33,22 +36,69 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <Button layoutX="599.0" layoutY="41.0" mnemonicParsing="false" style="-fx-background-color: #009999;" text="Log Out" textFill="WHITE">
+            <Button fx:id="logout" layoutX="599.0" layoutY="41.0" mnemonicParsing="false" onAction="#LogoutHandler" style="-fx-background-color: #009999;" text="Log Out" textFill="WHITE">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Button>
-            <TableView fx:id="tableView" layoutX="2.0" layoutY="168.0" prefHeight="526.0" prefWidth="735.0">
-              <columns>
-                <TableColumn fx:id="disesterId" prefWidth="65.0" style="-fx-alignment: center;" text="Id" />
-                <TableColumn fx:id="disasterTitle" prefWidth="240.0" style="-fx-alignment: center;" text="Title " />
-                  <TableColumn fx:id="details" prefWidth="104.0" style="-fx-alignment: center;" text="View Details" />
-                  <TableColumn fx:id="priority" prefWidth="98.0" style="-fx-alignment: center;" text="Priority" />
-                  <TableColumn fx:id="status" prefWidth="140.0" style="-fx-alignment: center;" text="Status" />
-                  <TableColumn fx:id="action" prefWidth="87.0" style="-fx-alignment: center;" text="Action" />
-              </columns>
-            </TableView>
+            <TabPane layoutY="124.0" prefHeight="577.0" prefWidth="739.0" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="pending" text="Pending">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableView" layoutX="-2.0" layoutY="49.0" prefHeight="495.0" prefWidth="744.0" style="-fx-background-color: #FFFFFF;">
+                                <columns>
+                                  <TableColumn fx:id="disesterId" prefWidth="65.0" style="-fx-alignment: center;" text="Id" />
+                                  <TableColumn fx:id="disasterTitle" prefWidth="240.0" style="-fx-alignment: center;" text="Title " />
+                                    <TableColumn fx:id="details" prefWidth="104.0" style="-fx-alignment: center;" text="View Details" />
+                                    <TableColumn fx:id="priority" prefWidth="98.0" style="-fx-alignment: center;" text="Priority" />
+                                    <TableColumn fx:id="status" prefWidth="140.0" style="-fx-alignment: center;" text="Status" />
+                                    <TableColumn fx:id="action" prefWidth="95.0" style="-fx-alignment: center;" text="Action" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="ongoing" text="Ongoing">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="353.0" prefWidth="739.0">
+                           <children>
+                              <TableView fx:id="tableView1" layoutY="49.0" prefHeight="445.0" prefWidth="736.0" style="-fx-background-color: #FFFFFF;">
+                                 <columns>
+                                    <TableColumn fx:id="disesterId1" prefWidth="65.0" style="-fx-alignment: center;" text="Id" />
+                                    <TableColumn fx:id="disasterTitle1" prefWidth="240.0" style="-fx-alignment: center;" text="Title " />
+                                    <TableColumn fx:id="details1" prefWidth="104.0" style="-fx-alignment: center;" text="View Details" />
+                                    <TableColumn fx:id="priority1" prefWidth="98.0" style="-fx-alignment: center;" text="Priority" />
+                                    <TableColumn fx:id="status1" prefWidth="140.0" style="-fx-alignment: center;" text="Status" />
+                                    <TableColumn fx:id="action1" prefWidth="88.0" style="-fx-alignment: center;" text="Action" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="completed" text="Completed">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableView11" layoutY="49.0" prefHeight="396.0" prefWidth="736.0" style="-fx-background-color: #FFFFFF;">
+                                 <columns>
+                                    <TableColumn fx:id="disesterId11" prefWidth="65.0" style="-fx-alignment: center;" text="Id" />
+                                    <TableColumn fx:id="disasterTitle11" prefWidth="260.0" style="-fx-alignment: center;" text="Title " />
+                                    <TableColumn fx:id="details11" prefWidth="107.0" style="-fx-alignment: center;" text="View Details" />
+                                    <TableColumn fx:id="priority11" prefWidth="113.0" style="-fx-alignment: center;" text="Priority" />
+                                    <TableColumn fx:id="status11" prefWidth="187.0" style="-fx-alignment: center;" text="Status" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </Pane>
-   </right>
+   </center>
 </BorderPane>

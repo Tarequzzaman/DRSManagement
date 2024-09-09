@@ -96,6 +96,22 @@ public class LoginPageController implements Initializable {
                 misc.setSceneFileName("UserDashboard.fxml"); // Redirect to User Dashboard
                 misc.setSceneName("User Dashboard");
             }
+            else if(user.getRole() == UserRole.RESPONDER_FLOOD_DEPARTMENT){
+                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
+                misc.setSceneName("Emergency Responder");
+            }
+            
+            else if(user.getRole() == UserRole.RESPONDER_FIRE_DEPARTMENT){
+                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
+                misc.setSceneName("Emergency Responder");
+            }
+            
+            else if(user.getRole() == UserRole.RESPONDER_HEALTH_DEPARTMENT){
+                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
+                misc.setSceneName("Emergency Responder");
+            }
+            
+            
             misc.openCloseScene(event);
         } catch (IOException e) {
             e.printStackTrace();

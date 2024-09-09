@@ -129,7 +129,7 @@
                                                 <Font name="Arial" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="FindId" layoutX="243.0" layoutY="137.0" prefHeight="36.0" prefWidth="226.0" text="123">
+                                        <Label fx:id="FindId" layoutX="243.0" layoutY="137.0" prefHeight="36.0" prefWidth="226.0">
                                             <font>
                                                 <Font name="Arial" size="16.0" />
                                             </font>

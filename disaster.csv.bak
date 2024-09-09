@@ -1,7 +1,7 @@
 disasterId,disasterTitle,detail,phone,unit,houseNumber,suburb,state,submittedBy,status,priority,designatedDepartment
 5,Bushfire in Northern Hills,Bushfire threatening residential areas after spreading from nearby forests,04723892386,Unit 5,127,Northern Hills,WA,2,complete,Low,Fire Department
 9,Forest Fire in Mountain Range,Forest fire spreading in remote mountainous area,04723892390,Unit 9,131,Mountain Range,NSW,2,Pending,Low,Fire Department
-13,Fire in Shopping Mall,Fire in a large shopping mall,04723892393,Unit 10,133,Mall District,NSW,2,complete,High,Fire Department
+13,Fire in Shopping Mall,Fire in a large shopping mall,04723892393,Unit 10,133,Mall District,NSW,2,ongoing,High,Fire Department
 14,Residential Fire in Suburbia,Fire broke out in a residential area,04723892394,Unit 11,134,Suburbia,VIC,2,complete,Medium,Fire Department
 15,Warehouse Fire in Industrial Park,Large fire in a warehouse complex,04723892395,Unit 12,135,Industrial Park,WA,2,complete,Medium,Fire Department
 16,Forest Fire Threatening Wildlife,Fire endangering wildlife in a protected area,04723892396,Unit 13,136,Wildlife Park,NSW,2,complete,High,Fire Department
