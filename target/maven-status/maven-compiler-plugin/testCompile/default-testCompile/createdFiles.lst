@@ -1,9 +1,9 @@
 constant/DRSConstantsTest.class
 databaseTest/FileServiceTest.class
 databaseTest/DisasterServiceTest.class
-utilsTest/ValidationUtilTest.class
 modelTest/SessionManagerTest.class
 modelTest/UserTest.class
 modelTest/DisasterDetailsTest.class
 enamTest/UserRoleTest.class
 databaseTest/UserServiceTest.class
+utilsTest/ValidationTest.class

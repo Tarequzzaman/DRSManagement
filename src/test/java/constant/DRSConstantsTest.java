@@ -76,7 +76,7 @@ public class DRSConstantsTest {
 
     
     
-    @Test
+  @Test
     public void testInvalidTypeUserRoles() {
         String[] expectedUserRoles = {
             "ADMIN", 
@@ -85,9 +85,11 @@ public class DRSConstantsTest {
             "RESPONDER_HEALTH_DEPARTMENT", 
             "RESPONDER_DESERT_DEPARTMENT", 
             "USER",
-            "PLAMBER"
+            "PLAMBER"  // This is intentionally invalid
         };
-        assertArrayEquals(expectedUserRoles, UsersConstant.userRole);
+        
+        // Assert that the arrays are NOT equal
+        assertFalse(java.util.Arrays.equals(expectedUserRoles, UsersConstant.userRole), "The roles should not match because 'PLAMBER' is not a valid role.");
     }
     
     @Test

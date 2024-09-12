@@ -3,7 +3,6 @@ database/DisasterService.class
 Model/SessionManager.class
 enam/UserRole.class
 constant/UsersConstant.class
-utils/NewClass.class
 module-info.class
 com/drsmanagement/LoginPageController.class
 constant/ReportDisaster.class

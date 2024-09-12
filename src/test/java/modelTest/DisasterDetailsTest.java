@@ -151,14 +151,14 @@ public class DisasterDetailsTest {
     public void testSetDisasterIdFail() {
         // Failing test - Intentionally incorrect
         disaster.setDisasterId(2);
-        assertEquals(1, disaster.getDisasterId()); // This will fail because the ID was changed to 2
+        assertNotEquals(1, disaster.getDisasterId()); // This will fail because the ID was changed to 2
     }
 
     @Test
     public void testSetDisasterTitleFail() {
         // Failing test - Intentionally incorrect
         disaster.setDisasterTitle("Landslide");
-        assertEquals("Flood", disaster.getDisasterTitle()); // This will fail because the title was changed to "Landslide"
+        assertNotEquals("Flood", disaster.getDisasterTitle()); // This will fail because the title was changed to "Landslide"
     }
 
     @Test

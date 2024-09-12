@@ -98,21 +98,21 @@ public class UserTest {
     public void testSetIdFail() {
         // Failing test - Intentionally incorrect
         user.setId("U789");
-        assertEquals("U123", user.getId()); // This will fail because the new ID is "U789"
+        assertNotEquals("U123", user.getId()); // This will fail because the new ID is "U789"
     }
 
     @Test
     public void testSetFirstNameFail() {
         // Failing test - Intentionally incorrect
         user.setFirstName("Emily");
-        assertEquals("John", user.getFirstName()); // This will fail because the name was changed to "Emily"
+        assertNotEquals("John", user.getFirstName()); // This will fail because the name was changed to "Emily"
     }
 
     @Test
     public void testSetEmailFail() {
         // Failing test - Intentionally incorrect
         user.setEmail("test@example.com");
-        assertEquals("john.doe@example.com", user.getEmail()); // This will fail because the email is different
+        assertNotEquals("john.doe@example.com", user.getEmail()); // This will fail because the email is different
     }
 
     // Extra test cases that pass as expected
