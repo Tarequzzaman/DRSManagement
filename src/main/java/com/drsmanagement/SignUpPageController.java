@@ -23,6 +23,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import java.util.regex.Pattern;
 
 /**
  * FXML Controller class
@@ -71,6 +72,7 @@ public class SignUpPageController implements Initializable {
         String number = phoneNumber.getText();
         String mail = email.getText();
         String pass = password.getText();
+        
 
         // Validate input fields
         if (fName == null || fName.trim().isEmpty()
@@ -83,13 +85,17 @@ public class SignUpPageController implements Initializable {
             return; // Exit the method if validation fails
         }
 
+
         // Use the new validation functions
         if (!ValidationUtil.isValidPhoneNumber(number)) {
+
             AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Phone Number", "Phone number must be a valid Australian number starting with 04 and have 10 digits.");
             return; // Exit if phone number validation fails
         }
 
+
         if (!ValidationUtil.isValidEmail(mail)) {
+
             AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Email", "Please enter a valid email address.");
             return; // Exit if email validation fails
         }

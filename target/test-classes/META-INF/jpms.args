@@ -1,0 +1,4 @@
+--patch-module
+com.drsmanagement=_
+--add-reads
+com.drsmanagement=ALL-UNNAMED

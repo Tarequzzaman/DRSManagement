@@ -1,17 +1,3 @@
 disasterId,disasterTitle,detail,phone,unit,houseNumber,suburb,state,submittedBy,status,priority,designatedDepartment
-5,Bushfire in Northern Hills,Bushfire threatening residential areas after spreading from nearby forests,04723892386,Unit 5,127,Northern Hills,WA,2,complete,Low,Fire Department
-9,Forest Fire in Mountain Range,Forest fire spreading in remote mountainous area,04723892390,Unit 9,131,Mountain Range,NSW,2,Pending,Low,Fire Department
-13,Fire in Shopping Mall,Fire in a large shopping mall,04723892393,Unit 10,133,Mall District,NSW,2,complete,High,Fire Department
-14,Residential Fire in Suburbia,Fire broke out in a residential area,04723892394,Unit 11,134,Suburbia,VIC,2,complete,Medium,Fire Department
-15,Warehouse Fire in Industrial Park,Large fire in a warehouse complex,04723892395,Unit 12,135,Industrial Park,WA,2,complete,Medium,Fire Department
-16,Forest Fire Threatening Wildlife,Fire endangering wildlife in a protected area,04723892396,Unit 13,136,Wildlife Park,NSW,2,complete,High,Fire Department
-17,Small Fire in Office Complex,Small fire broke out in an office building,04723892397,Unit 14,137,Office District,NSW,2,Pending,Low,Fire Department
-18,Garage Fire in Suburban Area,Fire broke out in a residential garage,04723892398,Unit 15,138,Suburbia,QLD,2,complete,Low,Fire Department
-19,Brush Fire Near Residential Area,Brush fire spreading towards houses,04723892399,Unit 16,139,Hillside,WA,2,complete,Medium,Fire Department
-20,House Fire in Downtown Area,Large house fire spreading to nearby buildings,04723892400,Unit 17,140,Downtown,SYD,2,complete,High,Fire Department
-21,Fire in Apartment Complex,Fire broke out in a multi-story apartment building,04723892401,Unit 18,141,City Center,NSW,2,complete,Medium,Fire Department
-22,Bushfire Near Coastal Area,Bushfire threatening residential areas near the coast,04723892402,Unit 19,142,Coastal Town,NSW,2,complete,Low,Fire Department
-23,Fire in Commercial Building,Fire broke out in a commercial complex,04723892403,Unit 20,143,Business District,VIC,2,complete,Medium,Fire Department
-24,Wildfire in National Park,Large wildfire spreading in a national park,04723892404,Unit 21,144,National Park,NSW,2,complete,High,Fire Department
-25,Residential Fire in Northern Suburbs,Fire threatening residential homes in the northern suburbs,04723892405,Unit 22,145,Northern Suburbs,QLD,2,Pending,High,Fire Department
-26,Factory Explosion in Industrial Zone,Explosion at a chemical factory causing a massive fire,04723892406,Unit 23,146,Industrial Zone,NSW,2,complete,High,Fire Department
+1,Fire,Fire in suburb,1234567890,Unit1,House10,SuburbX,StateY,User1,pending,high,Fire Department
+2,Flood,Flood in suburb,0987654321,Unit2,House20,SuburbY,StateZ,User2,pending,low,Flood Department
