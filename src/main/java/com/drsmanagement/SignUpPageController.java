@@ -5,6 +5,7 @@
 package com.drsmanagement;
 
 import enam.UserRole;
+import utils.ValidationUtil;
 import Model.User;
 import database.UserService;
 import java.io.IOException;
@@ -55,11 +56,11 @@ public class SignUpPageController implements Initializable {
 
     @FXML
     private void SignInHandler(ActionEvent event) throws IOException {
-                 MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
-                misc.setSceneFileName("LogInPage.fxml");
-                misc.setSceneName("Log In");
-                misc.openCloseScene(event);
-        
+        MiscSceneCloseAndOpen misc = new MiscSceneCloseAndOpen();
+        misc.setSceneFileName("LogInPage.fxml");
+        misc.setSceneName("Log In");
+        misc.openCloseScene(event);
+
     }
 
     @FXML
@@ -80,6 +81,17 @@ public class SignUpPageController implements Initializable {
 
             AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Input", "Please fill in all the fields.");
             return; // Exit the method if validation fails
+        }
+
+        // Use the new validation functions
+        if (!ValidationUtil.isValidPhoneNumber(number)) {
+            AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Phone Number", "Phone number must be a valid Australian number starting with 04 and have 10 digits.");
+            return; // Exit if phone number validation fails
+        }
+
+        if (!ValidationUtil.isValidEmail(mail)) {
+            AlertUtil.showAlert(AlertType.ERROR, "Validation Error", "Invalid Email", "Please enter a valid email address.");
+            return; // Exit if email validation fails
         }
 
         // Instantiate UserService to handle user operations
@@ -121,7 +133,5 @@ public class SignUpPageController implements Initializable {
             AlertUtil.showAlert(AlertType.ERROR, "Signup Failed", "Failed to Save User", "There was an error saving your details. Please try again.");
         }
     }
-
-    
 
 }

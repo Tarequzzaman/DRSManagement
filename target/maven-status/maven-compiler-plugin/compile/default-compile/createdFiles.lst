@@ -3,13 +3,13 @@ database/DisasterService.class
 Model/SessionManager.class
 enam/UserRole.class
 constant/UsersConstant.class
-com/drsmanagement/Label.class
 module-info.class
 com/drsmanagement/LoginPageController.class
 constant/ReportDisaster.class
 Model/DisesterTableView.class
 com/drsmanagement/ReportDisasterPageController.class
 Model/User.class
+utils/ValidationUtil.class
 constant/AdminViewConstants.class
 com/drsmanagement/MiscSceneCloseAndOpen.class
 Model/DisasterDetails.class

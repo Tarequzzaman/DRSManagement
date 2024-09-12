@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.drsmanagement;
+
 import utils.AlertUtil;
 import Model.User;
 import database.UserService;
 import enam.UserRole;
 import Model.SessionManager;
-
+import utils.ValidationUtil;
 
 import java.io.IOException;
 
@@ -37,10 +38,9 @@ public class LoginPageController implements Initializable {
     private PasswordField passwordField;
     @FXML
     private Button logIn;
-    
+
     private UserService userService;
     MiscSceneCloseAndOpen misc;
-
 
     /**
      * Initializes the controller class.
@@ -48,11 +48,11 @@ public class LoginPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+
         userService = new UserService();
         misc = new MiscSceneCloseAndOpen();
 
-    }    
+    }
 
     @FXML
     private void SignUpButtonHandlller(ActionEvent event) throws IOException {
@@ -64,7 +64,7 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void LogInHandler(ActionEvent event) {
-        
+
         String email = emailField.getText();
         String password = passwordField.getText();
 
@@ -72,6 +72,11 @@ public class LoginPageController implements Initializable {
         if (email == null || email.trim().isEmpty() || password == null || password.trim().isEmpty()) {
             AlertUtil.showAlert(Alert.AlertType.ERROR, "Validation Error", "Invalid Input", "Please fill in all the required fields.");
             return;
+        }
+
+        if (!ValidationUtil.isValidEmail(email)) {
+            AlertUtil.showAlert(Alert.AlertType.ERROR, "Validation Error", "Invalid Email", "Please enter a valid email address.");
+            return; // Exit if email validation fails
         }
 
         // Find the user by email
@@ -91,31 +96,24 @@ public class LoginPageController implements Initializable {
             if (user.getRole() == UserRole.ADMIN) {
                 misc.setSceneFileName("AdminDashboard.fxml"); // Redirect to Admin Dashboard
                 misc.setSceneName("Admin Dashboard");
-            } else if (user.getRole() == UserRole.USER)
-           {
+            } else if (user.getRole() == UserRole.USER) {
                 misc.setSceneFileName("UserDashboard.fxml"); // Redirect to User Dashboard
                 misc.setSceneName("User Dashboard");
-            }
-            else if(user.getRole() == UserRole.RESPONDER_FLOOD_DEPARTMENT){
+            } else if (user.getRole() == UserRole.RESPONDER_FLOOD_DEPARTMENT) {
+                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
+                misc.setSceneName("Emergency Responder");
+            } else if (user.getRole() == UserRole.RESPONDER_FIRE_DEPARTMENT) {
+                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
+                misc.setSceneName("Emergency Responder");
+            } else if (user.getRole() == UserRole.RESPONDER_HEALTH_DEPARTMENT) {
                 misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
                 misc.setSceneName("Emergency Responder");
             }
-            
-            else if(user.getRole() == UserRole.RESPONDER_FIRE_DEPARTMENT){
-                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
-                misc.setSceneName("Emergency Responder");
-            }
-            
-            else if(user.getRole() == UserRole.RESPONDER_HEALTH_DEPARTMENT){
-                misc.setSceneFileName("ResponderDashboard.fxml"); // Redirect to User Dashboard
-                misc.setSceneName("Emergency Responder");
-            }
-            
-            
+
             misc.openCloseScene(event);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
+
 }
